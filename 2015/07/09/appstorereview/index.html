@@ -24,7 +24,7 @@
 
 
 
-  <meta name="keywords" content="appium," />
+  <meta name="keywords" content="Hexo,next" />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-  <title> appium入门指南 // Shine Xiao's Notes </title>
+  <title> appstorereview // Shine Xiao's Notes </title>
 </head>
 
 <body>
@@ -142,7 +142,7 @@
           
           
             
-              appium入门指南
+              appstorereview
             
           
         </h1>
@@ -150,7 +150,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2015-07-08
+          發表於 2015-07-09
         </span>
 
         
@@ -167,65 +167,42 @@
       
 
       
-        <h2 id="安装appium">安装appium</h2><ul>
-<li><p>node安装</p>
-<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -g --<span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.cnpmjs.org  install appium</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载安装</p>
-<p><a href="https://bitbucket.org/appium/appium.app/downloads/appium-1.4.0.dmg" target="_blank" rel="external">appium 官网</a></p>
-</li>
+        <h2 id="上架被拒血泪史">上架被拒血泪史</h2><ol>
+<li><p>Vip申请，但是未说明如何申请及申请成功后vip权益。</p>
+<ul>
+<li>What’s the VIP for?</li>
+<li>How does the user obtain the VIP？</li>
+<li>What services do users could be get after obtaining the VIP?</li>
 </ul>
-<h2 id="运行appium">运行appium</h2><ul>
-<li><p>command下输入命令 -U 后面为真机设备号 —app 为包名</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appium -U <span class="number">0</span>d74b93b6c6db8dfa18beb37bdca25f787467823 --app com<span class="class">.easymin</span><span class="class">.daijia</span><span class="class">.driver</span><span class="class">.emdaijia</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<h2 id="安装appium_client">安装appium client</h2><ul>
-<li><p>ruby客户端安装</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="operator"><span class="keyword">update</span> <span class="comment">--system</span></span><br><span class="line">gem <span class="keyword">update</span> bundler</span><br><span class="line">gem <span class="keyword">uninstall</span> -aIx appium_lib</span><br><span class="line">gem <span class="keyword">install</span> <span class="comment">--no-rdoc --no-ri appium_lib</span></span></span><br></pre></td></tr></table></figure>
+</ol>
+<ol>
+<li><p>App包含有通过企业版下载的链接和相关的二维码。</p>
+<p>During review, your app installed or launched executable code, which is a violation of the App Store Review Guidelines. Specifically, your app uses the itms-services URL scheme to install an application.</p>
 </li>
-<li><p>python客户端安装</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> Appium-Python-Client</span><br></pre></td></tr></table></figure>
+<li><p>提供的演示帐号不能进行登陆。</p>
+<p>Specifically, the demo account you provided is invalid. We’ve attached screenshot(s) for your reference.</p>
 </li>
-<li><p>java客户端安装</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>io.appium<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>java-client<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>程序内出现了更新提示或者点击更新检测功能。</p>
+<p>Your app includes an update button or alerts the user to update the app. To avoid user confusion, app version updates must utilize the iOS built-in update mechanism.</p>
 </li>
-<li><p>nodejs客户端安装</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> wd</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="初始化代码">初始化代码</h2><ul>
-<li><p>java初始化代码</p>
-<p>安卓</p>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DesiredCapabilities capabilities = new DesiredCapabilities<span class="params">()</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"deviceName"</span>,<span class="string">"Android Emulator"</span>)</span>;<span class="comment">//设备名称</span></span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"platformVersion"</span>, <span class="string">"4.4"</span>)</span>;<span class="comment">//平台版本</span></span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"app"</span>, <span class="string">"com.easymin.daijia.driver.emdaijia"</span>)</span>;<span class="comment">//app打包文件路径</span></span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"appPackage"</span>, <span class="string">"com.easymin.daijia.client"</span>)</span>;<span class="comment">//包名</span></span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"appActivity"</span>, <span class="string">".MainActivity"</span>)</span>;<span class="comment">//activity名称</span></span><br><span class="line">AndroidDriver driver = new AndroidDriver<span class="params">(new URL<span class="params">(<span class="string">"http://127.0.0.1:4723/wd/hub"</span>)</span>, capabilities)</span>;</span><br></pre></td></tr></table></figure>
-<p>iphone</p>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DesiredCapabilities capabilities = new DesiredCapabilities<span class="params">()</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(CapabilityType.VERSION,<span class="string">"8.4"</span>)</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(CapabilityType.PLATFORM,  Platform.YOSEMITE)</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"deviceName"</span>,  <span class="string">"xiao的 iPhone"</span>)</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(<span class="string">"platformName"</span>,<span class="string">"ios"</span>)</span>;</span><br><span class="line">capabilities.setCapability<span class="params">(MobileCapabilityType.APP,<span class="string">"com.easymin.daijia.driver.emdaijia"</span>)</span>;</span><br><span class="line">driver = new IOSDriver<span class="params">(new URL<span class="params">(<span class="string">"http://0.0.0.0:4723/wd/hub"</span>)</span>,capabilities)</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="运行测试提示缺少ideviceinstaller">运行测试提示缺少ideviceinstaller</h3><p>  安装ideviceinstaller</p>
-  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>install ideviceinstaller</span><br></pre></td></tr></table></figure>
+</ol>
 
       
     </div>
 
     <div class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/appium/"> #appium </a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/09/appstorereview/">appstorereview</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/08/appium/">appium入门指南</a>
             
           </div>
         </div>
@@ -331,7 +308,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装appium"><span class="nav-number">1.</span> <span class="nav-text">安装appium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行appium"><span class="nav-number">2.</span> <span class="nav-text">运行appium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装appium_client"><span class="nav-number">3.</span> <span class="nav-text">安装appium client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化代码"><span class="nav-number">4.</span> <span class="nav-text">初始化代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行测试提示缺少ideviceinstaller"><span class="nav-number">4.1.</span> <span class="nav-text">运行测试提示缺少ideviceinstaller</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上架被拒血泪史"><span class="nav-number">1.</span> <span class="nav-text">上架被拒血泪史</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
