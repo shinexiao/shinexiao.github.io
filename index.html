@@ -144,6 +144,89 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/13/cocos2dlua/">
+                cocos2dlua
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於 2015-07-13
+        </span>
+
+        
+
+        
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="cocos2d-lua_学习总结">cocos2d-lua 学习总结</h2><ol>
+<li><p>框架使用cocos2d 3.6</p>
+<p>项目创建</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cocos new -<span class="tag">p</span> com<span class="class">.easymin</span><span class="class">.game</span> -l lua projectName</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>几何</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc<span class="class">.RectMake</span>, cc<span class="class">.SizeMake</span>, cc.PointMake</span><br></pre></td></tr></table></figure>
+<p>在lua中替换为</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rect</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">size</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">p</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注册事件分发器</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">removeDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p> 改为</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  cc.<span class="function"><span class="title">registerTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line"> cc.<span class="function"><span class="title">registerStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc.<span class="function"><span class="title">unregisterTouchDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>粒子系统中的cc.ParticleSystemQuad被合并到cc.ParticleSystem：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">cc</span><span class="class">.ParticleSystemQuad</span><span class="class">.create</span>(); <span class="tag">-</span>&gt; <span class="tag">cc</span><span class="class">.ParticleSystem</span><span class="class">.create</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>颜色生成</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">Color4B</span><span class="params">(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>containsPoint修改为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rectContainsPoint</span><span class="params">(rect,point)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/09/appstorereview/">
                 appstorereview
               </a>
@@ -340,7 +423,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>

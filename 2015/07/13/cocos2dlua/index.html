@@ -47,7 +47,7 @@
 
 
 
-  <title> appstorereview // Shine Xiao's Notes </title>
+  <title> cocos2dlua // Shine Xiao's Notes </title>
 </head>
 
 <body>
@@ -142,7 +142,7 @@
           
           
             
-              appstorereview
+              cocos2dlua
             
           
         </h1>
@@ -150,7 +150,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          發表於 2015-07-09
+          發表於 2015-07-13
         </span>
 
         
@@ -167,24 +167,29 @@
       
 
       
-        <h2 id="上架被拒血泪史">上架被拒血泪史</h2><ol>
-<li><p>Vip申请，但是未说明如何申请及申请成功后vip权益。</p>
-<ul>
-<li>What’s the VIP for?</li>
-<li>How does the user obtain the VIP？</li>
-<li>What services do users could be get after obtaining the VIP?</li>
-</ul>
+        <h2 id="cocos2d-lua_学习总结">cocos2d-lua 学习总结</h2><ol>
+<li><p>框架使用cocos2d 3.6</p>
+<p>项目创建</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cocos new -<span class="tag">p</span> com<span class="class">.easymin</span><span class="class">.game</span> -l lua projectName</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
-<li><p>App包含有通过企业版下载的链接和相关的二维码。</p>
-<p>During review, your app installed or launched executable code, which is a violation of the App Store Review Guidelines. Specifically, your app uses the itms-services URL scheme to install an application.</p>
+<li><p>几何</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc<span class="class">.RectMake</span>, cc<span class="class">.SizeMake</span>, cc.PointMake</span><br></pre></td></tr></table></figure>
+<p>在lua中替换为</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rect</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">size</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">p</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>提供的演示帐号不能进行登陆。</p>
-<p>Specifically, the demo account you provided is invalid. We’ve attached screenshot(s) for your reference.</p>
+<li><p>注册事件分发器</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">removeDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p> 改为</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  cc.<span class="function"><span class="title">registerTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line"> cc.<span class="function"><span class="title">registerStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc.<span class="function"><span class="title">unregisterTouchDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>程序内出现了更新提示或者点击更新检测功能。</p>
-<p>Your app includes an update button or alerts the user to update the app. To avoid user confusion, app version updates must utilize the iOS built-in update mechanism.</p>
+<li><p>粒子系统中的cc.ParticleSystemQuad被合并到cc.ParticleSystem：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">cc</span><span class="class">.ParticleSystemQuad</span><span class="class">.create</span>(); <span class="tag">-</span>&gt; <span class="tag">cc</span><span class="class">.ParticleSystem</span><span class="class">.create</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>颜色生成</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">Color4B</span><span class="params">(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>containsPoint修改为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rectContainsPoint</span><span class="params">(rect,point)</span></span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -198,13 +203,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/13/cocos2dlua/">cocos2dlua</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/08/appium/">appium入门指南</a>
+              <a href="/2015/07/09/appstorereview/">appstorereview</a>
             
           </div>
         </div>
@@ -310,7 +313,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上架被拒血泪史"><span class="nav-number">1.</span> <span class="nav-text">上架被拒血泪史</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cocos2d-lua_学习总结"><span class="nav-number">1.</span> <span class="nav-text">cocos2d-lua 学习总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
