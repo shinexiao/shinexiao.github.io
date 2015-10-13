@@ -24,7 +24,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="ubuntu,server," />
 
 
 
@@ -47,7 +47,7 @@
 
 
 
-  <title> Shine Xiao's Notes </title>
+  <title> ubuntu-server // Shine Xiao's Notes </title>
 </head>
 
 <body>
@@ -61,9 +61,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <div id="header" class="header">
@@ -131,9 +129,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+
   <div id="posts" class="posts-expand">
     
-      
 
   <div class="post post-type-normal ">
     <div class="post-header">
@@ -144,9 +142,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/10/13/ubuntu-server/">
-                ubuntu-server
-              </a>
+              ubuntu-server
             
           
         </h1>
@@ -171,8 +167,7 @@
       
 
       
-        
-          <h2 id="ubuntu_搭建JAVA服务器环境">ubuntu 搭建JAVA服务器环境</h2><ol>
+        <h2 id="ubuntu_搭建JAVA服务器环境">ubuntu 搭建JAVA服务器环境</h2><ol>
 <li><p>通过apt-get 安装nginx</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install nginx</span><br></pre></td></tr></table></figure>
 </li>
@@ -194,350 +189,50 @@
 </li>
 </ol>
 
-        
       
     </div>
 
     <div class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu-server/"> #ubuntu,server </a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/05/docker/">docker</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </div>
   </div>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/05/docker/">
-                docker
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於 2015-08-05
-        </span>
-
-        
-
-        
-          
+      <div class="comments" id="comments">
         
       </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="ubuntu_安装docker">ubuntu 安装docker</h2><p>ubuntu下安装docker有2种方式：</p>
-<ol>
-<li><p>通过apt-get 安装</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">       sudo apt-get <span class="operator"><span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> -y docker.io</span><br><span class="line">sudo <span class="keyword">ln</span> -sf /usr/<span class="keyword">bin</span>/docker.io /usr/<span class="keyword">local</span>/<span class="keyword">bin</span>/docker  </span><br><span class="line">sudo sed -<span class="keyword">i</span> <span class="string">'$acomplete -F _docker docker'</span> /etc/bash_completion.<span class="keyword">d</span>/docker.io           </span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过Docker源安装</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install wget</span><br><span class="line">wget -qO- http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br><span class="line">sudo docker run hello-world #验证安装成功</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/13/cocos2dlua/">
-                cocos2dlua
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於 2015-07-13
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="cocos2d-lua_学习总结">cocos2d-lua 学习总结</h2><ol>
-<li><p>框架使用cocos2d 3.6</p>
-<p>项目创建</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cocos new -<span class="tag">p</span> com<span class="class">.easymin</span><span class="class">.game</span> -l lua projectName</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>几何</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc<span class="class">.RectMake</span>, cc<span class="class">.SizeMake</span>, cc.PointMake</span><br></pre></td></tr></table></figure>
-<p>在lua中替换为</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rect</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">size</span><span class="params">()</span></span>, cc.<span class="function"><span class="title">p</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注册事件分发器</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">addStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc<span class="class">.Director</span><span class="class">.getInstance</span>().<span class="function"><span class="title">getTouchDispatcher</span><span class="params">()</span></span>.<span class="function"><span class="title">removeDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<p> 改为</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">registerTargetedDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc.<span class="function"><span class="title">registerStandardDelegate</span><span class="params">()</span></span></span><br><span class="line"></span><br><span class="line">cc.<span class="function"><span class="title">unregisterTouchDelegate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>粒子系统中的cc.ParticleSystemQuad被合并到cc.ParticleSystem：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">cc</span><span class="class">.ParticleSystemQuad</span><span class="class">.create</span>(); <span class="tag">-</span>&gt; <span class="tag">cc</span><span class="class">.ParticleSystem</span><span class="class">.create</span>();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>颜色生成</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.Color4B(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>containsPoint修改为：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="function"><span class="title">rectContainsPoint</span><span class="params">(rect,point)</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/09/appstorereview/">
-                appstorereview
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於 2015-07-09
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="上架被拒血泪史">上架被拒血泪史</h2><ol>
-<li><p>Vip申请，但是未说明如何申请及申请成功后vip权益。</p>
-<ul>
-<li>What’s the VIP for?</li>
-<li>How does the user obtain the VIP？</li>
-<li>What services do users could be get after obtaining the VIP?</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li><p>App包含有通过企业版下载的链接和相关的二维码。</p>
-<p>During review, your app installed or launched executable code, which is a violation of the App Store Review Guidelines. Specifically, your app uses the itms-services URL scheme to install an application.</p>
-</li>
-<li><p>提供的演示帐号不能进行登陆。</p>
-<p>Specifically, the demo account you provided is invalid. We’ve attached screenshot(s) for your reference.</p>
-</li>
-<li><p>程序内出现了更新提示或者点击更新检测功能。</p>
-<p>Your app includes an update button or alerts the user to update the app. To avoid user confusion, app version updates must utilize the iOS built-in update mechanism.</p>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/08/appium/">
-                appium入门指南
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          發表於 2015-07-08
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="安装appium">安装appium</h2><ul>
-<li><p>node安装</p>
-<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -g --<span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.cnpmjs.org  install appium</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载安装</p>
-<p><a href="https://bitbucket.org/appium/appium.app/downloads/appium-1.4.0.dmg" target="_blank" rel="external">appium 官网</a></p>
-</li>
-</ul>
-<h2 id="运行appium">运行appium</h2><ul>
-<li><p>command下输入命令 -U 后面为真机设备号 —app 为包名</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appium -U <span class="number">0</span>d74b93b6c6db8dfa18beb37bdca25f787467823 --app com<span class="class">.easymin</span><span class="class">.daijia</span><span class="class">.driver</span><span class="class">.emdaijia</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="安装appium_client">安装appium client</h2><ul>
-<li><p>ruby客户端安装</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="operator"><span class="keyword">update</span> <span class="comment">--system</span></span><br><span class="line">gem <span class="keyword">update</span> bundler</span><br><span class="line">gem <span class="keyword">uninstall</span> -aIx appium_lib</span><br><span class="line">gem <span class="keyword">install</span> <span class="comment">--no-rdoc --no-ri appium_lib</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>python客户端安装</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="operator"><span class="keyword">install</span> Appium-Python-<span class="keyword">Client</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>java客户端安装</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>io.appium<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>java-client<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>nodejs客户端安装</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> wd</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="初始化代码">初始化代码</h2><ul>
-<li><p>java初始化代码</p>
-<p>安卓</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DesiredCapabilities capabilities = <span class="keyword">new</span> DesiredCapabilities();</span><br><span class="line">capabilities.setCapability(<span class="string">"deviceName"</span>,<span class="string">"Android Emulator"</span>);<span class="comment">//设备名称</span></span><br><span class="line">capabilities.setCapability(<span class="string">"platformVersion"</span>, <span class="string">"4.4"</span>);<span class="comment">//平台版本</span></span><br><span class="line">capabilities.setCapability(<span class="string">"app"</span>, <span class="string">"com.easymin.daijia.driver.emdaijia"</span>);<span class="comment">//app打包文件路径</span></span><br><span class="line">capabilities.setCapability(<span class="string">"appPackage"</span>, <span class="string">"com.easymin.daijia.client"</span>);<span class="comment">//包名</span></span><br><span class="line">capabilities.setCapability(<span class="string">"appActivity"</span>, <span class="string">".MainActivity"</span>);<span class="comment">//activity名称</span></span><br><span class="line">AndroidDriver driver = <span class="keyword">new</span> AndroidDriver(<span class="keyword">new</span> URL(<span class="string">"http://127.0.0.1:4723/wd/hub"</span>), capabilities);</span><br></pre></td></tr></table></figure>
-<p>iphone</p>
-<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DesiredCapabilities capabilities = new DesiredCapabilities();</span><br><span class="line">capabilities.<span class="built_in">set</span>Capability(CapabilityType.VERSION,<span class="string">"8.4"</span>);</span><br><span class="line">capabilities.<span class="built_in">set</span>Capability(CapabilityType.PLATFORM,  Platform.YOSEMITE);</span><br><span class="line">capabilities.<span class="built_in">set</span>Capability(<span class="string">"deviceName"</span>,  <span class="string">"xiao的 iPhone"</span>);</span><br><span class="line">capabilities.<span class="built_in">set</span>Capability(<span class="string">"platformName"</span>,<span class="string">"ios"</span>);</span><br><span class="line">capabilities.<span class="built_in">set</span>Capability(MobileCapabilityType.APP,<span class="string">"com.easymin.daijia.driver.emdaijia"</span>);</span><br><span class="line">driver = new IOSDriver(new URL(<span class="string">"http://0.0.0.0:4723/wd/hub"</span>),capabilities);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="运行测试提示缺少ideviceinstaller">运行测试提示缺少ideviceinstaller</h3><p>  安装ideviceinstaller</p>
-  <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>install ideviceinstaller</span><br></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
     
   </div>
 
-  
 
         </div>
 
@@ -558,6 +253,15 @@
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
       
 
       <div class="site-overview">
@@ -605,6 +309,17 @@
         
       </div>
 
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu_搭建JAVA服务器环境"><span class="nav-number">1.</span> <span class="nav-text">ubuntu 搭建JAVA服务器环境</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
       
 
     </div>
@@ -667,6 +382,145 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
